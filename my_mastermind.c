@@ -12,16 +12,18 @@ int my_mastermind(char secret_code[]){
 
 char valid_code[4];//the user input will be transcribed into this variable
 char usr_input[4];
-int nbr_read;
+int nbr_read = read(0, usr_input, 4);
 
-while((nbr_read = read(0, usr_input, 4)) != 4){
+while(sizeof(nbr_read) != 4){
         printf("Wrong input!\n");
+        continue;
 }
 
 //transfers usr_input to variable outside of while loop, which will be compared to actul secret code
 for(int i = 0;i < CODE_LENGTH;i++){
     valid_code[i] = usr_input[i];
 }
+
 
 int well_n_miss_place[2] = {};//will return the number of well placed and missplaced pieces of the code guessed by user
 

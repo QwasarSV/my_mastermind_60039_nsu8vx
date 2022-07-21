@@ -1,9 +1,20 @@
-my_mastermind: my_mastermind.c
-	gcc -Wall -Wextra -Werror -o my_mastermind my_mastermind.c
+CC = gcc
+CFLAGS += -Wall -Werror -Wextra
+CFLAGS_DEBUG = $(CFLAGS)
+MAIN = my_mastermind
+SRCS = main.c \
+		my_mastermind.c
+OBJS = $(SRCS: .c = .o) 
 
+all: $(MAIN)
+
+$(MAIN): $(OBJS)
+		$(CC) $(CFLAGS) -o $@ $(LINKERFLAG) $^
 
 clean:
-	rm -f *.o
+		$(RM) $(OBJS)
 
 fclean: clean
-	rm -f my_mastermind 
+		$(RM) $(MAIN) $(DEBUG)
+
+re: fclean all

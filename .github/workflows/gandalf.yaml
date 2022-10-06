@@ -1,0 +1,13 @@
+name: Running Unit test
+on:
+  pull_request:
+    branches: [ main ]
+jobs:
+  functional_tests:
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@v2 
+    - run: |
+        /home/gaetan/gandalf_linux-latest
+        # true
+      name: Gandalf - Shall you pass?

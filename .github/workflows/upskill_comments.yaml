@@ -1,0 +1,11 @@
+name: Upskill Callback Comment
+on:
+  pull_request_review_comment:
+    types: [created, edited]
+jobs:
+  trigger_upskill_comment:
+    runs-on: self-hosted
+    steps:
+      - run: |
+          curl -X POST https://upskill.us.qwasar.io/solutions/95/check
+          true

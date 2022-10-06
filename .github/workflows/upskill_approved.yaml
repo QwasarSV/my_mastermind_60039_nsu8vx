@@ -1,0 +1,12 @@
+name: Upskill Callback Approved
+on:
+  pull_request_review:
+    types: [submitted]
+jobs:
+  trigger_upskill_approval:
+    if: github.event.review.state == 'approved'
+    runs-on: self-hosted
+    steps:
+      - run: |
+          curl -X POST https://upskill.us.qwasar.io/solutions/95/check
+          true

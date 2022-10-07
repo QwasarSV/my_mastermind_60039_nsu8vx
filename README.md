@@ -1,9 +1,6 @@
 # Welcome to My Mastermind
 ***
-info on header files:
-    -https://www.youtube.com/watch?v=mR8P0NU-ues
-    -https://www.youtube.com/watch?v=u1e0gLoz1SU
-    -
+
 ## Task
 At maximum, take 2 flags, -c and -t, which specify a secret code, and a maximum amount of attempts for playing the game. If no flags are 
 specified, then a radom secret code is generated and a default of 10 max attempts is used. The user uses a CLI to input a guess, a 4
